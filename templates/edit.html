@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Edit Movie</h2>
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" value="{{ movie['title'] }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Overview</label>
+        <textarea name="overview" class="form-control" rows="3" required>{{ movie['overview'] }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Release Date</label>
+        <input type="date" name="release_date" class="form-control" value="{{ movie['release_date'] }}" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">User Rating</label>
+        <input type="number" name="user_rating" class="form-control" value="{{ movie['user_rating'] }}" step="0.1" min="0" max="10" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Genres</label>
+        <input type="text" name="genres" class="form-control" value="{{ movie['genres'] }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Language</label>
+        <input type="text" name="language" class="form-control" value="{{ movie['language'] }}">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" name="adult" class="form-check-input" id="adultCheck" {% if movie['adult'] %}checked{% endif %}>
+        <label class="form-check-label" for="adultCheck">Adult Content</label>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Poster Image</label>
+        <input type="file" name="poster_path" class="form-control" accept="image/*">
+        {% if movie['poster_path'] %}
+            <img src="{{ url_for('uploaded_file', filename=movie['poster_path']) }}" class="poster mt-2" width="100" alt="Poster">
+        {% endif %}
+    </div>
+    <button type="submit" class="btn btn-success">Save Changes</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

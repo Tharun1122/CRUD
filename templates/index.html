@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block nav_buttons %}
+    <a href="{{ url_for('add') }}" class="btn btn-success me-2">Add Movie</a>
+    <a href="{{ url_for('fetch_posters') }}" id="fetchPostersBtn" class="btn btn-info">Fetch Posters</a>
+{% endblock %}
+{% block content %}
+<h1 class="mb-4">Movie List</h1>
+<div class="table-responsive">
+    <table class="table table-hover align-middle text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>Poster</th>
+                <th>Title</th>
+                <th>Overview</th>
+                <th>Release Date</th>
+                <th>User Rating</th>
+                <th>Genres</th>
+                <th>Language</th>
+                <th>Adult</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>
+                    {% if movie['poster_path'] %}
+                        <img src="{{ url_for('uploaded_file', filename=movie['poster_path']) }}" class="poster" width="80" alt="Poster">
+                    {% else %}
+                        <span class="text-muted">No image</span>
+                    {% endif %}
+                </td>
+                <td>{{ movie['title'] }}</td>
+                <td>{{ movie['overview'] }}</td>
+                <td>{{ movie['release_date'] }}</td>
+                <td>{{ movie['user_rating'] }}</td>
+                <td>{{ movie['genres'] }}</td>
+                <td>{{ movie['language'] }}</td>
+                <td>{{ 'Yes' if movie['adult'] else 'No' }}</td>
+                <td>
+                    <a href="{{ url_for('edit', id=movie['id']) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <form method="post" action="{{ url_for('delete', id=movie['id']) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="9">No movies available.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

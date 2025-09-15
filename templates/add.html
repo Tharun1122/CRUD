@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Add New Movie</h2>
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Overview</label>
+        <textarea name="overview" class="form-control" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Release Date</label>
+        <input type="date" name="release_date" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">User Rating</label>
+        <input type="number" name="user_rating" class="form-control" step="0.1" min="0" max="10" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Genres</label>
+        <input type="text" name="genres" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Language</label>
+        <input type="text" name="language" class="form-control">
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" name="adult" class="form-check-input" id="adultCheck">
+        <label class="form-check-label" for="adultCheck">Adult Content</label>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Poster Image</label>
+        <input type="file" name="poster_path" class="form-control" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-success">Add Movie</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

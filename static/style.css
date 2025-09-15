@@ -1,0 +1,90 @@
+/* Light mode styles */
+body {
+    padding-top: 70px;
+    background-color: #f4f6f8;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #212529;
+}
+
+
+.navbar {
+    border-radius: 0 0 10px 10px;
+}
+
+.table img.poster {
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alert {
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f !important;
+}
+
+body.dark-mode .table {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+    background-color: #333333;
+}
+
+body.dark-mode .btn-info {
+    background-color: #0bb5f5;
+    border-color: #0bb5f5;
+}
+
+body.dark-mode .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+body.dark-mode .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+body.dark-mode .form-check-label,
+body.dark-mode .form-check-input {
+    color: #e0e0e0;
+}
+
+body.dark-mode .alert {
+    background-color: #333333;
+    color: #f8f9fa;
+}
