@@ -63,6 +63,7 @@ A simple Flask-based web application that allows users to manage a personal movi
 ---
 
 ## 📂 Project Structure
+
 📁 your-project/
 │
 ├── app.py              # Main Flask app
@@ -74,4 +75,5 @@ A simple Flask-based web application that allows users to manage a personal movi
 │   └── edit.html
 ├── uploads/            # Folder to store uploaded poster images
 ├── README.md           # Project documentation
+           
 
