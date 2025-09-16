@@ -68,10 +68,10 @@ A simple Flask-based web application that allows users to manage a personal movi
 ├── app.py              # Main Flask app
 ├── img.py              # Poster fetching script (OMDb API)
 ├── movies.db           # SQLite database file
-├── /templates/         # HTML templates (index, add, edit)
+├── templates/          # HTML templates (index, add, edit)
 │   ├── index.html
 │   ├── add.html
 │   └── edit.html
-├── /uploads/           # Folder to store uploaded poster images
-├── README.md           # This file
+├── uploads/            # Folder to store uploaded poster images
+├── README.md           # Project documentation
 
