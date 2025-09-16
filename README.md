@@ -64,16 +64,7 @@ A simple Flask-based web application that allows users to manage a personal movi
 
 ## 📂 Project Structure
 
-📁 your-project/
-│
-├── app.py              # Main Flask app
-├── img.py              # Poster fetching script (OMDb API)
-├── movies.db           # SQLite database file
-├── templates/          # HTML templates (index, add, edit)
-│   ├── index.html
-│   ├── add.html
-│   └── edit.html
-├── uploads/            # Folder to store uploaded poster images
-├── README.md           # Project documentation
+<img width="503" height="275" alt="image" src="https://github.com/user-attachments/assets/32eb042d-6cdf-476b-953f-d958bc4266f1" />
+
            
 
